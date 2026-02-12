@@ -2,9 +2,11 @@
 layout: about
 title: about
 permalink: /
-subtitle: <Master’s in Physics from **IISER Kolkata** | 
-  Incoming PhD Applicant | 
+subtitle: >
+  Master’s in Physics from **IISER Kolkata** |
+  Incoming PhD Applicant |
   Specializing in **Active Matter** & **PINNs**
+
 
 profile:
   align: right
