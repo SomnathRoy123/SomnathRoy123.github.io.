@@ -2,7 +2,9 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: <Master’s in Physics from **IISER Kolkata** | 
+  Incoming PhD Applicant | 
+  Specializing in **Active Matter** & **PINNs**
 
 profile:
   align: right
