@@ -2,11 +2,10 @@
 layout: post
 title: "Breaking Newton's Third Law: The Physics of Non-Reciprocal Interactions"
 date: 2025-01-01 09:00:00
-description: When Action ≠ Reaction. Exploring how non-reciprocity drives emergent behavior in active matter, from bacterial swarms to neural networks.
+description: "When Action != Reaction. Exploring how non-reciprocity drives emergent behavior in active matter, from bacterial swarms to neural networks."
 tags: active-matter non-equilibrium-physics theory research
 categories: research
 featured: true
-thumbnail: assets/img/active_matter_thumb.jpg  # Replace with a snapshot of your simulation!
 ---
 
 In standard equilibrium physics, interactions are almost always reciprocal. If Particle A pushes Particle B, Particle B pushes back with equal force. This is Newton’s Third Law, and it allows us to define conserved quantities like momentum and energy.
