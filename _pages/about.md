@@ -3,15 +3,14 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Master’s in Physics from **IISER Kolkata** |
+  Master’s in Physics from IISER Kolkata |
   Incoming PhD Applicant |
-  Specializing in **Active Matter** & **PINNs**
-
+  Specializing in <b>Active Matter</b> & <b>PINNs</b>
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: True # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
 
   more_info: null
     

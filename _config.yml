@@ -60,6 +60,7 @@ search_enabled: true
 socials_in_search: true
 posts_in_search: true
 bib_search: true
+toc: false
 
 # Dimensions
 max_width: 930px
@@ -228,7 +229,6 @@ plugins:
   - jekyll-socials
   - jekyll-tabs
   - jekyll-terser
-  - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
 
