@@ -1,7 +1,8 @@
 github_username: SomnathRoy123
-
 repo_description_lines_max: 2
+
+# Ensure there are no triple slashes or extra paths
 github_repos:
   - SomnathRoy123/Hexatic-Phase-Analysis
   - SomnathRoy123/statistical-physics-tools
-  - SomnathRoy123/atharv-naik/whale-call-classification
+  - atharv-naik/whale-call-classification
