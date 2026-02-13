@@ -1,5 +1,5 @@
 ---
-layout: course
+layout: page
 title: Mathematical Methods II (MA2103)
 description: A comprehensive theory course covering Partial Differential Equations, Fourier Series, Probability, and Numerical Methods.
 instructor: <b>Prof. Rajesh Kumble Nayak</b>
