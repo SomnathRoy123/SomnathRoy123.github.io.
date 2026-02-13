@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Breaking Newtons Third Law: The Physics of Non-Reciprocal Interactions"
-date: 2026-02-13 08:00:00
+date: 2025-01-01 08:00:00
 description: "Exploring how non-reciprocity drives emergent behavior in active matter, from bacterial swarms to neural networks."
 tags: active-matter physics research
 categories: research
