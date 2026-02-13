@@ -1,14 +1,7 @@
-github_users:
-  - torvalds
-  - alshedivat
+github_username: SomnathRoy123
 
 repo_description_lines_max: 2
-
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - SomnathRoy123/Hexatic-Phase-Analysis
+  - SomnathRoy123/statistical-physics-tools
+  - SomnathRoy123/atharv-naik/whale-call-classification

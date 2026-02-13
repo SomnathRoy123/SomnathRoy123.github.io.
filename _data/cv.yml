@@ -38,7 +38,7 @@ cv:
     Experience:
       - company: Technical University Berlin & IISER Kolkata
         position: Master's Thesis Student
-        location: Berlin, Germany / Kolkata, India
+        location: Berlin, Germany 
         start_date: 2024-08-01
         end_date: 2025-06-30
         summary: Investigating emergent dynamic phases and clustering in active matter governed by non-reciprocal orientational interactions.
