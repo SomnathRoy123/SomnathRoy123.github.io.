@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Breaking Newton's Third Law: The Physics of Non-Reciprocal Interactions"
-date: 2026-02-14 09:00:00
+date: 2025-01-01 09:00:00
 description: When Action ≠ Reaction. Exploring how non-reciprocity drives emergent behavior in active matter, from bacterial swarms to neural networks.
 tags: active-matter non-equilibrium-physics theory research
 categories: research
