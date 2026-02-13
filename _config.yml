@@ -164,8 +164,9 @@ collections:
     output: true
   projects:
     output: true
-  teachings:
+  teaching:
     output: true
+    permalink: /teaching/:path/
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
