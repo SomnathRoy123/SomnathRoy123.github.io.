@@ -8,8 +8,7 @@ nav_order: 6
 ---
 
 <div class="projects">
-<h3>Debug Check:</h3>
-<p>Number of courses found: {{ site.teaching.size }}</p>
+
   {% for course in site.teaching %}
     <div class="row mb-4">
       <div class="col-sm-10">
