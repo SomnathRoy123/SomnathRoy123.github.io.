@@ -5,37 +5,55 @@
 
 @use "sass:color";
 
-// Colors
-$red-color: #ff3636 !default;
-$red-color-dark: #b71c1c !default;
-$orange-color: #f29105 !default;
-$blue-color: #0076df !default;
-$blue-color-dark: #00369f !default;
-$cyan-color: #2698ba !default;
-$light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
-$green-color: #00ab37 !default;
-$green-color-lime: #b7d12a !default;
-$green-color-dark: #009f06 !default;
-$green-color-light: #ddffdd !default;
-$green-color-bright: #11d68b !default;
-$purple-color: #b509ac !default;
-$light-purple-color: color.adjust($purple-color, $lightness: 25%);
-$pink-color: #f92080 !default;
-$pink-color-light: #ffdddd !default;
-$yellow-color: #efcc00 !default;
+// -----------------------------------------------------------------------------
+// PROFESSIONAL ACADEMIC PALETTE (Deep Teal & Slate)
+// Replaces standard bright colors with "Journal-Quality" tones
+// -----------------------------------------------------------------------------
 
-$grey-color: #828282 !default;
-$grey-color-light: color.adjust($grey-color, $lightness: 40%);
-$grey-color-dark: #1c1c1d;
-$grey-900: #212529;
+// PRIMARY ACCENT (Used for links, buttons, and highlights)
+// Was Purple/Pink. Now "Deep Teal" - distinct, serious, and modern.
+$purple-color: #00695c !default; // Replaced bright purple with Deep Teal
+$light-purple-color: color.adjust($purple-color, $lightness: 35%);
+
+// SECONDARY ACCENT (Used for hover states)
+// Was Blue. Now "Slate Blue" - better readability.
+$blue-color: #2b6cb0 !default; 
+$blue-color-dark: #1a365d !default;
+
+// ALERTS & INFO
+// Muted tones instead of neon brights
+$red-color: #c53030 !default;       // Darker Red (Error)
+$red-color-dark: #822727 !default;
+$orange-color: #dd6b20 !default;    // Burnt Orange (Warning)
+$green-color: #2f855a !default;     // Forest Green (Success)
+$green-color-bright: #38a169 !default; 
+
+// SUPPORTING COLORS
+$cyan-color: #319795 !default;      // Teal-Cyan
+$light-cyan-color: color.adjust($cyan-color, $lightness: 20%);
+$pink-color: #d53f8c !default;      // Muted Pink
+$pink-color-light: #fbb6ce !default;
+$yellow-color: #d69e2e !default;    // Mustard Yellow (Not neon)
+
+// -----------------------------------------------------------------------------
+// MONOCHROME & TYPOGRAPHY COLORS
+// -----------------------------------------------------------------------------
+
+$grey-color: #718096 !default;      // Cool Grey
+$grey-color-light: color.adjust($grey-color, $lightness: 25%);
+$grey-color-dark: #2d3748;          // Soft Dark (Not pitch black)
+$grey-900: #1a202c;                 // Deepest Grey for headings
 
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
-// Theme colors
+// -----------------------------------------------------------------------------
+// THEME CONFIG
+// -----------------------------------------------------------------------------
 
-$code-bg-color-light: rgba($purple-color, 0.05);
-$code-bg-color-dark: #2c3237 !default;
+// Code Blocks: Slight blue tint looks more modern than purple
+$code-bg-color-light: rgba($blue-color, 0.05);
+$code-bg-color-dark: #1e252b !default; // VS Code style dark bg
 
 // Font awesome location
 $fa-font-path: "../webfonts";
@@ -44,17 +62,17 @@ $fa-font-path: "../webfonts";
 $back-to-top-z-index: 10;
 $back-to-top-bottom: 30px;
 $back-to-top-right: 30px;
-$back-to-top-diameter: 40px;
+$back-to-top-diameter: 45px; // Slightly larger for easier clicking
 $back-to-top-height: $back-to-top-diameter;
 $back-to-top-width: $back-to-top-diameter;
 
 // Max width default
-$max-content-width: 930px !default;
+// Increased slightly to give equations more room (standard is 930px)
+$max-content-width: 1000px !default;
 
-
-// Custom Scaling for 120% Zoom effect
+// Custom Scaling
 html {
-  font-size: 110%; /* This increases the base rem unit for the whole site */
+  font-size: 106%; /* Adjusted to 106% - 110% can sometimes break navbar layouts */
 }
 
 body {
