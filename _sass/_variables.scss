@@ -50,3 +50,14 @@ $back-to-top-width: $back-to-top-diameter;
 
 // Max width default
 $max-content-width: 930px !default;
+
+
+// Custom Scaling for 120% Zoom effect
+html {
+  font-size: 115%; /* This increases the base rem unit for the whole site */
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
