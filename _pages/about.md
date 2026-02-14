@@ -3,45 +3,42 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Master’s in Physics from IISER Kolkata |
-  Incoming PhD Applicant |
-  Specializing in <b>Active Matter</b> & <b>PINNs</b>
+  <b>Theoretical Physicist</b>. Investigating Non-Equilibrium Statistical Mechanics, <a href='https://en.wikipedia.org/wiki/Active_matter'>Active Matter</a> & <a href='#'>PINNs</a>.
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: false # 'false' looks more modern/professional than circular
+  
+  # This adds your contact info nicely under the photo
+  more_info: >
+    <p>Haringhata, India</p>
+    <p><i>Searching for PhD positions</i></p>
 
-  more_info: null
-    
-
-selected_papers: False # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+selected_papers: false # Change to 'true' once you add your thesis/papers to _bibliography/papers.bib
+social: true # ENABLE this to show your email/github icons at the bottom
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: true
+  scrollable: true
+  limit: 3 # Kept to 3 to avoid cluttering the homepage
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false # Set to 'false' unless you have written blog posts, otherwise it leaves an empty section
+  scrollable: true
+  limit: 3
 ---
 
-I am a theoretical physicist specialized in Statistical Mechanics and Active Matter. My research focuses on the collective behavior of non-equilibrium systems, specifically exploring hydrodynamic field theories and non-reciprocal interactions in active systems.
+I am a theoretical physicist driven by a deep fascination with **non-equilibrium statistical mechanics** and **computational biophysics**. My research investigates how complex, collective behaviors emerge in active systems through the lenses of hydrodynamic field theories and non-reciprocal interactions.
 
-Currently, I am bridging the gap between traditional theoretical physics and modern computational techniques. I am actively developing Physics-Informed Neural Networks (PINNs) to solve complex hydrodynamic equations and modeling Active Brownian Particles (ABP) to understand the emergence of order in biological and synthetic systems.
+Currently, I am bridging the gap between analytical theory and advanced computation. I specialize in developing **Physics-Informed Neural Networks (PINNs)** to solve intricate hydrodynamic equations and designing **Langevin dynamics simulations** to model Active Brownian Particles (ABPs).
 
-<!--
- Write your biography here. 
-Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.# # com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+### Research Focus
 
--
+* **Non-Reciprocal Interactions:** exploring the breakdown of Newton’s third law in active mixtures.
+* **Hydrodynamic Field Theories:** deriving continuum equations for biological active matter.
+* **Machine Learning in Physics:** utilizing PINNs for solving high-dimensional PDEs in fluid dynamics.
 
+---
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
-
--->
+I completed my **Integrated Master’s in Physics** at **IISER Kolkata**, with thesis research conducted at **TU Berlin**. I am currently seeking a PhD position to continue pushing the boundaries of active matter physics.
