@@ -2,9 +2,9 @@
 layout: page
 title: Bio-Acoustic Event Detection via Spectral Contrast Enhancement
 description: Detecting transient signals in high-noise environments using Background Subtraction and Convolutional Neural Networks.
-img: assets/img/spectrogram_thumb.jpg
+# img: assets/img/spectrogram_thumb.jpg
 importance: 1
-category: Machine Learning & Signal Processing
+category: Machine Learning
 related_publications: false
 repository: https://github.com/atharv-naik/whale-call-classification
 date: 2023-04-20
@@ -53,7 +53,3 @@ Instead of manual tuning, I implemented a rigorous **GridSearchCV** to explore t
 ## 3. Inference Strategy: Ensemble Voting
 To maximize robustness, the final classification was not based on a single pass. We employed an additive voting mechanism:
 
-```python
-# Inference Logic
-Probability_Total = Model(Input_TimeEnhanced) + Model(Input_FreqEnhanced)
-Prediction = 1 if Probability_Total > Threshold else 0
