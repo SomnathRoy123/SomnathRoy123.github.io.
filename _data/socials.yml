@@ -8,7 +8,7 @@
 cv_pdf: assets/pdf/Somnath_Roy_CV.pdf 
 
 # 2. Contact Info
-email: your.email@example.com  # REPLACE this with your professional email (e.g., Gmail is fine for now)
+email: somnath.roy.research@gmail.com  # REPLACE this with your professional email (e.g., Gmail is fine for now)
 
 # 3. Academic Profiles
 # If you don't have these yet, leave them blank or comment them out with '#'
@@ -22,14 +22,10 @@ linkedin_username: somnath-roy-596136233 # REPLACE with your actual LinkedIn use
 # orcid_id: 
 
 # 5. RSS Feed (Good for academic blogs)
-rss_icon: true
+# rss_icon: False
 
 # 6. Custom Links 
 # Since you are applying for PhDs, you might want to link to a specific lab or project
-custom_social: 
-  logo: /assets/img/github-mark.png # Ensure you have a small logo icon here
-  title: My Repositories
-  url: https://github.com/SomnathRoy123
 
 # Other messengers (Optional)
 # wechat_qr: 
