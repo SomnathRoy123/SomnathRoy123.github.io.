@@ -37,3 +37,62 @@
 @use "font-awesome/brands";
 @use "font-awesome/solid";
 @use "font-awesome/regular";
+
+
+/* ==========================================================================
+   CUSTOM PROJECT CARD STYLING (PREMIUM LOOK)
+   ========================================================================== */
+
+/* Card Base Styling */
+.project-card {
+  border: 1px solid #eaeaea; /* Very subtle border */
+  border-radius: 8px; /* Softer corners */
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1); /* Smooth physics */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Barely visible shadow at rest */
+  background-color: #fff; /* Ensure white background */
+  overflow: hidden; /* Keeps images inside rounded corners */
+}
+
+/* The "Lift" Effect on Hover */
+.project-card:hover {
+  transform: translateY(-5px); /* Moves up slightly */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10); /* Soft shadow appears */
+  border-color: transparent;
+}
+
+/* Typography Tweaks */
+.project-card .card-title a {
+  text-decoration: none;
+  color: #2b2b2b; /* Dark grey, almost black */
+  font-weight: 600;
+}
+
+.project-card .card-title a:hover {
+  color: var(--global-theme-color, #0056b3); /* Uses theme color if avail, else blue */
+}
+
+.project-card .card-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Footer & Icons */
+.project-card .card-footer {
+  background-color: #fff;
+  border-top: 1px solid #f8f9fa;
+}
+
+.icon-link {
+  color: #adb5bd; /* Muted grey icons */
+  transition: color 0.2s;
+  margin-left: 10px;
+}
+
+.icon-link:hover {
+  color: #495057; /* Darker on hover */
+}
+
+/* Fix for Masonry Layout Gaps */
+.grid-item {
+  margin-bottom: 20px;
+}
