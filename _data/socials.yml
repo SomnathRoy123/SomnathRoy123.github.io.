@@ -1,14 +1,36 @@
-# this file contains the social media links and usernames of the author
-# the socials will be displayed in the order they are defined here
-# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-cv_pdf: /assets/pdf/example_pdf.pdf # path to your CV PDF file
-email: you@example.com # your email address
-inspirehep_id: 1010907 # Inspire HEP author ID
-rss_icon: true # comment this line to hide the RSS icon
-scholar_userid: qc6CJjYAAAAJ # your Google Scholar ID
-# wechat_qr: # filename of your wechat qr-code saved as an image (e.g., wechat-qr.png if saved to assets/img/wechat-qr.png)
-# whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
-custom_social: # can be any name here other than the ones already defined in the jekyll-socials plugin
-  logo: https://www.alberteinstein.com/wp-content/uploads/2024/03/cropped-favicon-192x192.png # can be png, svg, jpg
-  title: Custom Social
-  url: https://www.alberteinstein.com/
+# -----------------------------------------------------------------------------
+# Contact & Social Configuration for Somnath Roy
+# -----------------------------------------------------------------------------
+
+# 1. Your CV
+# Rename your PDF to 'Somnath_Roy_CV.pdf' and put it in the 'assets/pdf/' folder.
+# This makes the file url look professional (e.g., yoursite.com/assets/pdf/Somnath_Roy_CV.pdf)
+cv_pdf: assets/pdf/Somnath_Roy_CV.pdf 
+
+# 2. Contact Info
+email: your.email@example.com  # REPLACE this with your professional email (e.g., Gmail is fine for now)
+
+# 3. Academic Profiles
+# If you don't have these yet, leave them blank or comment them out with '#'
+# inspirehep_id:  # Leave blank if you don't have one yet (common for pre-PhD)
+# scholar_userid: # Go to your Google Scholar profile -> look at the URL -> copy the ID part (e.g., 'qc6CJjYAAAAJ')
+
+# 4. Social Platforms (Standard)
+github_username: SomnathRoy123
+linkedin_username: somnath-roy-596136233 # REPLACE with your actual LinkedIn username
+# twitter_username: 
+# orcid_id: 
+
+# 5. RSS Feed (Good for academic blogs)
+rss_icon: true
+
+# 6. Custom Links 
+# Since you are applying for PhDs, you might want to link to a specific lab or project
+custom_social: 
+  logo: /assets/img/github-mark.png # Ensure you have a small logo icon here
+  title: My Repositories
+  url: https://github.com/SomnathRoy123
+
+# Other messengers (Optional)
+# wechat_qr: 
+# whatsapp_number:
