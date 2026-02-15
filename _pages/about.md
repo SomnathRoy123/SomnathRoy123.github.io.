@@ -10,12 +10,15 @@ profile:
   image: prof_pic.jpg
   image_circular: false 
   
+  # COMPACT SIDEBAR UPDATE
   more_info: >
-    <p><b>Visiting Student Researcher</b> | TU Berlin</p>
-    <p>BS-MS in Physics</p>
-    <p>IISER Kolkata</p>
-    <p>MITACS Globalink Research Fellow</p>
-    <p style="color: #d62828;"><b>Actively seeking PhD opportunities</b></p>
+    <div style="font-size: 0.85rem; line-height: 1.2; text-align: center;">
+      <p style="margin: 4px 0;"><b>Visiting Student Researcher</b> | TU Berlin</p>
+      <p style="margin: 4px 0;"><b>BS-MS in Physics</b> | IISER Kolkata</p>
+      <p style="margin: 4px 0;">MITACS Globalink Fellow</p>
+      <hr style="margin: 8px auto; width: 60%; opacity: 0.3;">
+      <p style="color: #d62828; margin: 4px 0; font-weight: bold;">Actively seeking PhD opportunities</p>
+    </div>
 
 selected_papers: false 
 social: true 
@@ -31,6 +34,19 @@ latest_posts:
   limit: 3
 ---
 
+<style>
+  /* Increases the container width for this page only */
+  .container {
+    max-width: 1000px !important; 
+  }
+  
+  /* Adjusts the sidebar width to give the text more room */
+  .profile {
+    width: 32% !important; 
+    margin-left: 20px;
+  }
+</style>
+
 I am a **theoretical physicist investigating** how collective behaviour emerges in driven and living active matter. My work combines statistical physics, continuum theory, and computational modelling to derive mechanistic descriptions that connect microscopic interactions to macroscopic dynamics. More broadly, I seek a multiscale physical understanding of living systems — from molecular activity to cellular organisation and collective motion — with the long-term goal of enabling bottom-up construction and control of life-like active materials.
 
 **Current Research**
@@ -45,6 +61,3 @@ Beyond my current focus, I have a strong background in scientific machine learni
 * **Hydrodynamic Field Theories:** Deriving continuum equations for biological and synthetic active media.
 * **Machine Learning for Physics:** Leveraging PINNs and data‑driven methods to solve complex dynamical systems (part of my computational toolkit).
 * **Coarse‑grained Modelling:** Constructing particle‑based models (active polymers, ABPs) calibrated to experimental observations.
-
-
-
