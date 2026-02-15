@@ -3,45 +3,48 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  <b>Theoretical Physicist</b>. Investigating Non-Equilibrium Statistical Mechanics, <a href='https://en.wikipedia.org/wiki/Active_matter'>Active Matter</a> & <a href='#'>PINNs</a>.
+  <b>Theoretical Physicist</b>. Investigating <a href='#'>Non-Equilibrium Statistical Mechanics</a>, <a href='https://en.wikipedia.org/wiki/Active_matter'>Active Matter</a> & Complex Systems.
 
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: false # 'false' looks more modern/professional than circular
+  image_circular: false 
   
-  # This adds your contact info nicely under the photo
-more_info: >
-    <p><b>Project Student</b> | TU Berlin</p>
-    <p>BS-MS in Physics (Minor in Comp. & Data Science)</p>
+  more_info: >
+    <p><b>Visiting Student Researcher</b> | TU Berlin</p>
+    <p>BS-MS in Physics</p>
     <p>IISER Kolkata</p>
     <p>MITACS Globalink Research Fellow</p>
-    <p style="color: #264653;"><b>Seeking PhD Opportunities</b></p>
+    <p style="color: #d62828;"><b>Actively seeking PhD opportunities</b></p>
 
-selected_papers: false # Change to 'true' once you add your thesis/papers to _bibliography/papers.bib
-social: true # ENABLE this to show your email/github icons at the bottom
+selected_papers: false 
+social: true 
 
 announcements:
   enabled: true
   scrollable: true
-  limit: 3 # Kept to 3 to avoid cluttering the homepage
+  limit: 3 
 
 latest_posts:
-  enabled: false # Set to 'false' unless you have written blog posts, otherwise it leaves an empty section
+  enabled: false 
   scrollable: true
   limit: 3
 ---
 
-I am a theoretical physicist driven by a deep fascination with **non-equilibrium statistical mechanics** and **computational biophysics**. My research investigates how complex, collective behaviors emerge in active systems through the lenses of hydrodynamic field theories and non-reciprocal interactions.
+I am a **theoretical physicist investigating** how collective behaviour emerges in driven and living active matter. My work combines statistical physics, continuum theory, and computational modelling to derive mechanistic descriptions that connect microscopic interactions to macroscopic dynamics. More broadly, I seek a multiscale physical understanding of living systems — from molecular activity to cellular organisation and collective motion — with the long-term goal of enabling bottom-up construction and control of life-like active materials.
 
-Currently, I am bridging the gap between analytical theory and advanced computation. I specialize in developing **Physics-Informed Neural Networks (PINNs)** to solve intricate hydrodynamic equations and designing **Langevin dynamics simulations** to model Active Brownian Particles (ABPs).
+**Current Research**
+Currently, I am a **Visiting Student Researcher at TU Berlin**, working on **non-equilibrium statistical mechanics**. My research investigates how microscopic asymmetries—such as internal torques, non‑reciprocal couplings, or activity gradients—produce large‑scale structure and transport in active matter systems. I primarily employ **hydrodynamic field theories** and **coarse‑grained Langevin dynamics** to understand these behaviors.
+
+**Technical Expertise**
+Beyond my current focus, I have a strong background in scientific machine learning. I have previously developed and applied **Physics‑Informed Neural Networks (PINNs)** to solve high-dimensional PDEs and infer effective parameters in fluid dynamics. My broader toolkit includes stochastic simulation, continuum theory, and data-driven inverse methods.
 
 ### Research Focus
 
-* **Non-Reciprocal Interactions:** exploring the breakdown of Newton’s third law in active mixtures.
-* **Hydrodynamic Field Theories:** deriving continuum equations for biological active matter.
-* **Machine Learning in Physics:** utilizing PINNs for solving high-dimensional PDEs in fluid dynamics.
+* **Non‑equilibrium Statistical Mechanics:** Analyzing how violations of detailed balance and action–reaction at the microscopic scale alter phase behaviour and transport.
+* **Hydrodynamic Field Theories:** Deriving continuum equations for biological and synthetic active media.
+* **Machine Learning for Physics:** Leveraging PINNs and data‑driven methods to solve complex dynamical systems (part of my computational toolkit).
+* **Coarse‑grained Modelling:** Constructing particle‑based models (active polymers, ABPs) calibrated to experimental observations.
 
----
 
-I completed my **Integrated Master’s in Physics** at **IISER Kolkata**, with thesis research conducted at **TU Berlin**. I am currently seeking a PhD position to continue pushing the boundaries of active matter physics
+
