@@ -5,7 +5,7 @@ date: 2025-01-01 08:00:00
 description: "Exploring how non-reciprocity drives emergent behavior in active matter, from bacterial swarms to neural networks."
 tags: active-matter physics research
 categories: research
-featured: true
+featured: false
 ---
 
 In standard equilibrium physics, interactions are almost always reciprocal. If Particle A pushes Particle B, Particle B pushes back with equal force. This is Newton's Third Law, and it allows us to define conserved quantities like momentum and energy.
