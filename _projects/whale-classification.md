@@ -24,8 +24,7 @@ We treated the spectrogram $S(t, f)$ as a 2D scalar field and applied a moving a
 1.  **Temporal Filter (Horizontal):** Highlights short-duration events (transients) by removing steady-state noise over time $t$.
 2.  **Frequency Filter (Vertical):** Highlights specific pitch anomalies by removing broadband noise across frequencies $f$.
 
-The normalized signal $S'_{norm}$ was calculated by subtracting the local neighborhood mean ($\mu_{local}$) from the global neighborhood mean ($\mu_{global}$):
-
+The normalized signal $S'_{\text{norm}}$ was calculated by subtracting the local neighborhood mean ($\mu_{\text{local}}$) from the global neighborhood mean ($\mu_{\text{global}}$):
 $$S'_{norm} = S_{raw} - \frac{\mu_{global} - \mu_{local}}{\sigma_{noise}}$$
 
 This resulted in two distinct datasets (Time-Enhanced and Frequency-Enhanced), effectively doubling the training data and forcing the model to learn features that are invariant to background shifts.
