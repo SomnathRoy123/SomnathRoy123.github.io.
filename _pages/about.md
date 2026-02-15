@@ -11,9 +11,12 @@ profile:
   image_circular: false # 'false' looks more modern/professional than circular
   
   # This adds your contact info nicely under the photo
-  more_info: >
-    <p>Haringhata, India</p>
-    <p><i>Searching for PhD positions</i></p>
+more_info: >
+    <p><b>Project Student</b> | TU Berlin</p>
+    <p>BS-MS in Physics (Minor in Comp. & Data Science)</p>
+    <p>IISER Kolkata</p>
+    <p>MITACS Globalink Research Fellow</p>
+    <p style="color: #264653;"><b>Seeking PhD Opportunities</b></p>
 
 selected_papers: false # Change to 'true' once you add your thesis/papers to _bibliography/papers.bib
 social: true # ENABLE this to show your email/github icons at the bottom
@@ -41,4 +44,4 @@ Currently, I am bridging the gap between analytical theory and advanced computat
 
 ---
 
-I completed my **Integrated Master’s in Physics** at **IISER Kolkata**, with thesis research conducted at **TU Berlin**. I am currently seeking a PhD position to continue pushing the boundaries of active matter physics.
+I completed my **Integrated Master’s in Physics** at **IISER Kolkata**, with thesis research conducted at **TU Berlin**. I am currently seeking a PhD position to continue pushing the boundaries of active matter physics
