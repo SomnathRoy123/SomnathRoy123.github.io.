@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Bio-Acoustic Event Detection via Spectral Contrast Enhancement
-description: Detecting transient signals in high-noise environments using Background Subtraction and Convolutional Neural Networks.
-# img: assets/img/spectrogram_thumb.jpg
+title: Bio-Acoustic Event Detection in Stochastic Noise Fields
+description: A study on identifying transient Blue Whale A-Calls using Dual-Domain Spectral Subtraction and Convolutional Neural Networks.
+img: assets/img/spectrogram_thumb.jpg
 importance: 1
 category: Machine Learning
 related_publications: false
@@ -10,45 +10,72 @@ repository: https://github.com/atharv-naik/whale-call-classification
 date: 2023-04-20
 ---
 
-**Role:** Algorithm Design & Optimization  
-**Key Techniques:** `Spectral Subtraction` `Grid Search Optimization` `Ensemble Learning` `CNN`
+**Role:** Computational Physics & Algorithm Design  
+**Stack:** `Python` `TensorFlow/Keras` `Scikit-Learn` `Signal Processing`
 
-## Project Abstract
-In experimental physics and bio-acoustics, the primary challenge is often distinguishing a weak transient signal from a stochastic background. This project developed a computational pipeline to identify **Blue Whale A-Calls** by coupling classical signal processing (background subtraction) with deep learning (CNNs). The approach focuses on maximizing the Signal-to-Noise Ratio (SNR) *before* the data touches the neural network.
+## 1. Introduction: The Signal-to-Noise Challenge
+In experimental bio-acoustics, the detection of specific animal vocalizations is often analogous to identifying a weak transient signal within a high-entropy, stochastic background. The **Blue Whale A-Call**—a low-frequency, pulsed vocalization—is frequently obscured by the ambient noise of the ocean, which follows a $1/f$ (pink noise) power spectral density, compounded by anthropogenic noise (shipping traffic) and other biological events.
 
-## 1. Mathematical Preprocessing: Spectral Contrast Enhancement
-Standard spectrograms were insufficient due to ambient ocean noise. I implemented a **Dual-Domain Contrast Enhancement** algorithm to isolate the signal.
+This project implements a robust computational pipeline to solve this **binary classification problem**. By coupling classical signal processing (to improve the local Signal-to-Noise Ratio) with deep learning (for non-linear feature extraction), we achieve high-fidelity detection rates even in low-SNR environments.
 
-We treated the spectrogram $S(t, f)$ as a 2D scalar field and applied a moving average filter to subtract the background noise. We defined two distinct filters:
+## 2. Methodology: Dual-Domain Spectral Topology
+Raw spectrograms are often insufficient for direct training due to the non-stationary nature of ocean noise. To address this, we treated the spectrogram $S(t, f)$ not merely as an image, but as a scalar field representing energy density. We applied a **Dual-Domain Contrast Enhancement** algorithm to isolate the signal from the background.
 
-1.  **Temporal Filter (Horizontal):** Highlights short-duration events (transients) by removing steady-state noise over time $t$.
-2.  **Frequency Filter (Vertical):** Highlights specific pitch anomalies by removing broadband noise across frequencies $f$.
+The background noise $\eta(t, f)$ is often correlated in one dimension but uncorrelated in the other:
+* **Shipping Noise:** Continuous in time, localized in frequency (horizontal bands).
+* **Impulsive Noise:** Localized in time, broadband in frequency (vertical spikes).
 
-The normalized signal $S'_{\text{norm}}$ was calculated by subtracting the local neighborhood mean ($\mu_{\text{local}}$) from the global neighborhood mean ($\mu_{\text{global}}$):
-$$S'_{norm} = S_{raw} - \frac{\mu_{global} - \mu_{local}}{\sigma_{noise}}$$
+To filter this, we calculated the normalized signal intensity $S^\prime$ by subtracting the local neighborhood mean ($\mu_{\text{local}}$) from the global background mean ($\mu_{\text{global}}$), effectively performing a background subtraction in two orthogonal basis sets:
 
-This resulted in two distinct datasets (Time-Enhanced and Frequency-Enhanced), effectively doubling the training data and forcing the model to learn features that are invariant to background shifts.
+$$
+S^\prime_{\text{norm}} = S_{\text{raw}} - \frac{\mu_{\text{global}} - \mu_{\text{local}}}{\sigma_{\text{noise}}}
+$$
 
-## 2. Model Architecture & Optimization
-We utilized a **Convolutional Neural Network (CNN)** to perform binary classification on the enhanced 64x64 spectral images. 
+This resulted in two distinct datasets—**Time-Enhanced** and **Frequency-Enhanced**—forcing the neural network to learn features that are invariant to these specific noise topologies.
+
+
+
+## 3. Neural Network Architecture
+We constructed a **Convolutional Neural Network (CNN)** tailored specifically for the 64x64 spectral inputs. Unlike standard computer vision tasks that favor small (3x3) kernels, we opted for larger **7x7 convolutional kernels**.
+
+### Physical Justification for 7x7 Kernels
+The Blue Whale A-Call is not a point source; it is a "chirp" that evolves over time and frequency. A larger receptive field (7x7) allows the first layer of the network to capture the **long-range temporal and spectral correlations** of the call structure immediately, rather than relying on deeper layers to aggregate this information.
 
 ### Network Topology
-* **Input:** 64x64 Single-Channel Spectrogram
-* **Feature Extraction:** Two blocks of `Conv2D` (7x7 kernels) $\to$ `BatchNormalization` $\to$ `ReLU` $\to$ `MaxPooling`. Large kernels (7x7) were chosen specifically to capture the "chirp" structure of the whale calls.
-* **Classifier:** Dense layers (200 units) with aggressive **Dropout (0.5)** to prevent overfitting on the small dataset.
+The architecture was implemented in `Keras` with a custom `Scikit-Learn` wrapper for optimization:
 
-### Hyperparameter Search (GridSearch)
-Instead of manual tuning, I implemented a rigorous **GridSearchCV** to explore the hyperparameter phase space. We optimized for the **F1-Score** (harmonic mean of precision and recall) to handle class imbalance.
+1.  **Input Robustness:** A `Dropout(0.2)` layer is applied directly to the input. This introduces artificial noise during training, forcing the model to learn robust features that are not dependent on specific pixel artifacts.
+2.  **Feature Extraction:**
+    * **Layer 1:** 15 Filters ($7 \times 7$), Stride 1, `BatchNormalization`, `ReLU`, `MaxPooling` ($2 \times 2$).
+    * **Layer 2:** 30 Filters ($7 \times 7$), Stride 1, `BatchNormalization`, `ReLU`, `MaxPooling` ($2 \times 2$).
+3.  **Classification Head:** A fully connected `Dense` layer (200 units) with aggressive `Dropout(0.5)` to prevent overfitting, feeding into a final Sigmoid activation unit.
 
-* **Optimizers Tested:** SGD, Adam, Adagrad, RMSprop
-* **Learning Rates:** $10^{-1}, 10^{-2}$
-* **Batch Sizes:** 128, 256, 384
+## 4. Hyperparameter Phase Space Search
+To ensure the model was not falling into a local minimum, we avoided manual tuning. Instead, I implemented a rigorous **Grid Search (GridSearchCV)** to explore the hyperparameter phase space.
 
-**Optimal Configuration Found:**
-* **Optimizer:** SGD (Stochastic Gradient Descent)
-* **Activation:** ReLU
-* **Batch Size:** 128
+We defined a search grid over the following dimensions:
+* **Optimization Algorithms:** `SGD`, `Adam`, `Adagrad`, `RMSprop`.
+* **Learning Rates:** Logarithmic scale [$10^{-1}, 10^{-2}$].
+* **Batch Dynamics:** Sizes of [128, 256, 384].
 
-## 3. Inference Strategy: Ensemble Voting
-To maximize robustness, the final classification was not based on a single pass. We employed an additive voting mechanism:
+**Evaluation Metric:**
+Given the sparsity of whale calls (class imbalance), accuracy is a poor metric. We optimized for the **F1-Score** (harmonic mean of precision and recall) and validated using the **ROC-AUC** (Area Under the Receiver Operating Characteristic Curve).
 
+### Optimization Results
+The search revealed that **Stochastic Gradient Descent (SGD)** with a high learning rate ($0.1$) and Nesterov momentum provided the most stable convergence, outperforming adaptive optimizers like Adam for this specific smooth-landscape problem.
+
+## 5. Inference: The Logical 'OR' Gate
+A key insight of this project was the use of **Ensemble Logic** during inference. The model makes predictions on both the *Time-Enhanced* and *Frequency-Enhanced* versions of the spectrogram.
+
+We employed a logical disjunction (OR gate) for the final classification:
+$$
+\hat{y}_{\text{final}} = \hat{y}_{\text{time}} \lor \hat{y}_{\text{freq}}
+$$
+
+This means if the neural network detects a call in *either* the time-cleaned or frequency-cleaned domain, the event is flagged. This approach prioritizes **Recall (Sensitivity)**, which is critical in bio-acoustics where missing a rare biological event is often worse than a false positive.
+
+<div class="mt-4">
+    <a href="https://github.com/atharv-naik/whale-call-classification" class="btn btn-outline-dark btn-sm" role="button">
+        <i class="fab fa-github"></i> View Full Repository
+    </a>
+</div>
