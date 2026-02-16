@@ -3,278 +3,330 @@ layout: default
 ---
 
 <style>
-  /* 1. Typography & Global Settings */
-  .cv-page {
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #fff;
+  :root {
+    --cv-accent: #0056b3; /* Academic Blue */
+    --cv-text: #333;
+    --cv-muted: #666;
+    --cv-bg: #f8f9fa;
+    --cv-border: #eaeaea;
   }
 
-  h1, h2, h3, h4 {
-    margin: 0;
-    padding: 0;
+  .cv-web-container {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--cv-text);
+    margin-top: 2rem;
   }
 
-  a { color: #2b2b2b; text-decoration: none; }
-  a:hover { color: #0056b3; text-decoration: underline; }
-
-  /* 2. The Header (Name & Links) */
-  .cv-header {
-    text-align: center;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
+  /* --- HEADER SECTION --- */
+  .cv-web-header {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--cv-border);
+    padding-bottom: 2rem;
   }
-
-  .cv-name {
-    font-family: "Georgia", serif; /* Academic Touch */
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
+  
+  .cv-web-name {
+    font-size: 2.5rem;
+    font-weight: 800;
     color: #111;
-    text-transform: uppercase;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.5rem;
   }
 
-  .cv-subtitle {
-    font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #666;
-    margin-top: 5px;
-    margin-bottom: 15px;
+  .cv-web-label {
+    font-size: 1.1rem;
+    color: var(--cv-muted);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
   }
 
-  .cv-contact-info {
+  .cv-social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px; /* Pill shape */
+    color: #555;
     font-size: 0.9rem;
+    font-weight: 600;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+  }
+
+  .cv-social-btn:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+    transform: translateY(-2px);
+  }
+
+  .cv-social-btn i { margin-right: 8px; }
+
+  /* --- GRID LAYOUT --- */
+  .cv-web-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr; /* Fixed Sidebar, Flexible Main */
+    gap: 4rem;
+  }
+
+  @media (max-width: 900px) {
+    .cv-web-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* --- SIDEBAR (Skills, Education) --- */
+  .cv-sidebar-section { margin-bottom: 3rem; }
+  
+  .cv-sidebar-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    display: inline-block;
+  }
+
+  /* Education Item */
+  .cv-edu-item { margin-bottom: 1.5rem; }
+  .cv-edu-school { font-weight: 700; font-size: 1rem; color: #222; }
+  .cv-edu-degree { font-size: 0.95rem; color: #555; }
+  .cv-edu-date { font-size: 0.85rem; color: #888; margin-top: 2px; }
+
+  /* Skills Pills */
+  .cv-skill-group { margin-bottom: 1.5rem; }
+  .cv-skill-label { font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 5px; }
+  .cv-skill-tag {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #334155;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-right: 4px;
+    margin-bottom: 6px;
+  }
+
+  /* --- MAIN CONTENT (Experience) --- */
+  .cv-main-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .cv-main-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eaeaea;
+    margin-left: 20px;
+  }
+
+  /* Timeline Item */
+  .cv-timeline-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 3rem;
+    border-left: 2px solid #f0f0f0;
+  }
+
+  .cv-timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -7px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 3px solid var(--cv-accent);
+    border-radius: 50%;
+  }
+
+  .cv-job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .cv-job-role { font-size: 1.2rem; font-weight: 700; color: #111; }
+  .cv-job-company { font-size: 1rem; color: var(--cv-accent); font-weight: 500; margin-bottom: 5px; }
+  
+  .cv-job-date {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 2px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
     color: #555;
   }
 
-  .cv-contact-info span { margin: 0 8px; }
-
-  /* 3. The Two-Column Grid */
-  .cv-grid {
-    display: grid;
-    grid-template-columns: 32% 64%; /* Left Narrow, Right Wide */
-    gap: 4%;
-  }
-
-  @media (max-width: 768px) {
-    .cv-grid { grid-template-columns: 1fr; }
-  }
-
-  /* 4. Section Headers */
-  .section-title {
-    font-family: 'Lato', sans-serif;
-    font-weight: 900;
-    font-size: 1.1rem;
-    color: #222;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 5px;
-    margin-top: 0px;
-    margin-bottom: 15px;
-  }
-
-  .right-col .section-title {
-    margin-top: 0px; /* Reset top margin for right col alignment */
-  }
-
-  /* 5. Left Column Styling (Education, Skills) */
-  .edu-block { margin-bottom: 25px; }
+  .cv-job-summary { font-size: 1rem; color: #444; line-height: 1.6; margin-bottom: 10px; }
   
-  .edu-school {
-    font-weight: 700;
-    font-size: 1rem;
-    color: #000;
-  }
-  
-  .edu-degree {
+  .cv-job-bullets li {
     font-size: 0.95rem;
-    font-style: italic;
-    color: #444;
-    margin-bottom: 2px;
-  }
-  
-  .edu-date {
-    font-size: 0.85rem;
-    color: #777;
-    margin-bottom: 8px;
-  }
-
-  .edu-score {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #333;
-  }
-
-  .skill-block { margin-bottom: 20px; }
-  .skill-cat { font-weight: 700; font-size: 0.9rem; color: #000; margin-bottom: 4px; }
-  .skill-list { font-size: 0.9rem; color: #444; line-height: 1.4; }
-
-  /* 6. Right Column Styling (Experience, Research) */
-  .exp-block { margin-bottom: 30px; }
-
-  .exp-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 5px;
-  }
-
-  .exp-role {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: #000;
-  }
-
-  .exp-company {
-    font-family: "Georgia", serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: #333;
-  }
-
-  .exp-date {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #777;
-    text-align: right;
-    min-width: 100px;
-  }
-
-  .exp-summary {
-    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 6px;
     line-height: 1.5;
-    color: #444;
-    margin-bottom: 8px;
   }
 
-  .exp-bullets ul {
-    margin: 0;
-    padding-left: 18px;
+  /* Awards */
+  .cv-award-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    align-items: baseline;
   }
-
-  .exp-bullets li {
-    font-size: 0.92rem;
-    color: #444;
-    margin-bottom: 4px;
-    line-height: 1.45;
+  .cv-award-year {
+    font-weight: 700;
+    color: var(--cv-accent);
+    width: 50px;
+    flex-shrink: 0;
   }
-
 </style>
 
 <div class="post">
-  
-  <div style="text-align: right; margin-bottom: 10px;">
-    <a href="{{ 'assets/pdf/cv.pdf' | relative_url }}" target="_blank" class="btn btn-sm btn-outline-dark">
-      <i class="fas fa-file-pdf"></i> PDF
-    </a>
-  </div>
 
-  <article class="cv-page">
+  <article class="cv-web-container">
 
-    <header class="cv-header">
-      <div class="cv-name">{{ site.data.cv.name }}</div>
-      <div class="cv-subtitle">{{ site.data.cv.label }}</div>
-      <div class="cv-contact-info">
-        <a href="mailto:{{ site.data.cv.email }}">{{ site.data.cv.email }}</a> <span>•</span>
-        {{ site.data.cv.address.city }}, {{ site.data.cv.address.countryCode }} <span>•</span>
-        {% for social in site.data.cv.social_networks %}
-          <a href="{{ social.url }}">{{ social.network }}</a> {% unless forloop.last %}<span>•</span>{% endunless %}
-        {% endfor %}
-      </div>
-    </header>
-
-    <div class="cv-grid">
+    <div class="cv-web-header">
+      <h1 class="cv-web-name">{{ site.data.cv.name }}</h1>
+      <div class="cv-web-label">{{ site.data.cv.label }}</div>
       
-      <div class="left-col">
+      <div class="cv-actions">
+        <a href="{{ 'assets/pdf/cv.pdf' | relative_url }}" target="_blank" class="cv-social-btn" style="background: #111; color: #fff; border-color: #111;">
+          <i class="fas fa-file-download"></i> Download CV
+        </a>
         
-        <div class="section-title">Education</div>
-        {% for entry in site.data.cv.sections.Education %}
-        <div class="edu-block">
-          <div class="edu-school">{{ entry.institution }}</div>
-          <div class="edu-degree">{{ entry.studyType }}</div>
-          <div class="edu-degree">{{ entry.area }}</div>
-          <div class="edu-date">{{ entry.start_date }} – {{ entry.end_date }}</div>
-          {% if entry.score %}
-          <div class="edu-score">GPA: {{ entry.score }}</div>
-          {% endif %}
-          {% if entry.courses %}
-          <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">
-            <em>{{ entry.courses }}</em>
-          </div>
-          {% endif %}
-        </div>
+        <a href="mailto:{{ site.data.cv.email }}" class="cv-social-btn">
+          <i class="fas fa-envelope"></i> Email
+        </a>
+        {% for social in site.data.cv.social_networks %}
+        <a href="{{ social.url }}" target="_blank" class="cv-social-btn">
+          <i class="fab fa-{{ social.network | downcase }}"></i> {{ social.network }}
+        </a>
         {% endfor %}
-
-        <div class="section-title" style="margin-top: 30px;">Skills</div>
-        {% for skill in site.data.cv.skills %}
-        <div class="skill-block">
-          <div class="skill-cat">{{ skill.name }}</div>
-          <div class="skill-list">{{ skill.keywords }}</div>
-        </div>
-        {% endfor %}
-
-        <div class="section-title" style="margin-top: 30px;">Awards</div>
-        {% for entry in site.data.cv.sections.Awards %}
-        <div class="mb-3">
-          <div style="font-weight: 700; font-size: 0.9rem;">{{ entry.title }}</div>
-          <div style="font-size: 0.85rem; font-style: italic;">{{ entry.awarder }}</div>
-          <div style="font-size: 0.8rem; color: #777;">{{ entry.date }}</div>
-        </div>
-        {% endfor %}
-
       </div>
+    </div>
 
-      <div class="right-col">
+    <div class="cv-web-grid">
+      
+      <aside>
         
-        <div class="section-title">Research Experience</div>
-        {% for entry in site.data.cv.sections.Experience %}
-        <div class="exp-block">
-          <div class="exp-header">
-            <div>
-              <span class="exp-role">{{ entry.position }}</span>
+        <div class="cv-sidebar-section">
+          <div class="cv-sidebar-title">Education</div>
+          {% for entry in site.data.cv.sections.Education %}
+          <div class="cv-edu-item">
+            <div class="cv-edu-school">{{ entry.institution }}</div>
+            <div class="cv-edu-degree">{{ entry.studyType }} in {{ entry.area }}</div>
+            <div class="cv-edu-date">{{ entry.start_date }} – {{ entry.end_date }}</div>
+            {% if entry.score %}
+            <div style="font-size: 0.85rem; color: var(--cv-accent); font-weight: 600; margin-top: 2px;">
+              GPA: {{ entry.score }}
             </div>
-            <div class="exp-date">
-              {{ entry.start_date | date: "%b %Y" }} – 
-              {% if entry.end_date %}{{ entry.end_date | date: "%b %Y" }}{% else %}Present{% endif %}
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="cv-sidebar-section">
+          <div class="cv-sidebar-title">Technical Skills</div>
+          {% for skill in site.data.cv.skills %}
+          <div class="cv-skill-group">
+            <span class="cv-skill-label">{{ skill.name }}</span>
+            <div>
+              {% assign keywords = skill.keywords | split: ", " %}
+              {% for kw in keywords %}
+              <span class="cv-skill-tag">{{ kw }}</span>
+              {% endfor %}
             </div>
           </div>
-          <div class="exp-company">{{ entry.company }} | {{ entry.location }}</div>
+          {% endfor %}
+        </div>
+
+        <div class="cv-sidebar-section">
+          <div class="cv-sidebar-title">Languages</div>
+          {% for lang in site.data.cv.languages %}
+          <div style="font-size: 0.9rem; margin-bottom: 5px;">
+            <span style="font-weight: 600;">{{ lang.name }}</span> <span style="color:#888;">- {{ lang.summary }}</span>
+          </div>
+          {% endfor %}
+        </div>
+
+      </aside>
+
+      <main>
+        
+        <section>
+          <h2 class="cv-main-title">Research Experience</h2>
           
-          <div class="exp-summary mt-2">{{ entry.summary }}</div>
-          
-          {% if entry.highlights %}
-          <div class="exp-bullets">
-            <ul>
+          {% for entry in site.data.cv.sections.Experience %}
+          <div class="cv-timeline-item">
+            <div class="cv-job-header">
+              <div>
+                <div class="cv-job-role">{{ entry.position }}</div>
+                <div class="cv-job-company">{{ entry.company }} • {{ entry.location }}</div>
+              </div>
+              <div class="cv-job-date">
+                {{ entry.start_date | date: "%b %Y" }} – 
+                {% if entry.end_date %}{{ entry.end_date | date: "%b %Y" }}{% else %}Present{% endif %}
+              </div>
+            </div>
+            
+            {% if entry.summary %}
+            <div class="cv-job-summary">{{ entry.summary }}</div>
+            {% endif %}
+            
+            {% if entry.highlights %}
+            <ul class="cv-job-bullets">
               {% for item in entry.highlights %}
               <li>{{ item }}</li>
               {% endfor %}
             </ul>
+            {% endif %}
           </div>
-          {% endif %}
-        </div>
-        {% endfor %}
+          {% endfor %}
+        </section>
+
+        <section>
+          <h2 class="cv-main-title">Honors & Awards</h2>
+          {% for entry in site.data.cv.sections.Awards %}
+          <div class="cv-award-item">
+            <div class="cv-award-year">{{ entry.date }}</div>
+            <div>
+              <div style="font-weight: 700; color: #222;">{{ entry.title }}</div>
+              <div style="font-size: 0.9rem; font-style: italic; color: #555;">{{ entry.awarder }}</div>
+              <div style="font-size: 0.9rem; color: #666; margin-top: 2px;">{{ entry.summary }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </section>
 
         {% if site.data.cv.sections.Publications %}
-        <div class="section-title" style="margin-top: 40px;">Selected Publications</div>
-        {% for entry in site.data.cv.sections.Publications %}
-        <div class="mb-3">
-          <div style="font-weight: 700; font-size: 1rem;">{{ entry.title }}</div>
-          <div style="font-size: 0.95rem; font-style: italic;">{{ entry.authors | join: ", " }}</div>
-          <div style="font-size: 0.9rem; color: #555;">{{ entry.publisher }} ({{ entry.releaseDate }})</div>
-          <div style="font-size: 0.9rem; color: #444; margin-top: 2px;">{{ entry.summary }}</div>
-        </div>
-        {% endfor %}
+        <section style="margin-top: 3rem;">
+          <h2 class="cv-main-title">Key Publications</h2>
+          {% for entry in site.data.cv.sections.Publications %}
+          <div style="margin-bottom: 1.5rem;">
+            <div style="font-weight: 700; font-size: 1.05rem;">{{ entry.title }}</div>
+            <div style="color: #666; font-size: 0.95rem;">{{ entry.authors | join: ", " }}</div>
+            <div style="color: var(--cv-accent); font-size: 0.9rem; font-style: italic;">
+              {{ entry.publisher }} ({{ entry.releaseDate }})
+            </div>
+          </div>
+          {% endfor %}
+        </section>
         {% endif %}
 
-      </div>
-    </div>
+      </main>
 
+    </div>
   </article>
 </div>
