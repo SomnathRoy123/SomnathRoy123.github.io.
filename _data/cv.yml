@@ -1,11 +1,9 @@
 name: Somnath Roy
-label: Physicist & Data Scientist | Non-Linear Dynamics & AI
+label: Physicist & Researcher
 email: somnath.roy.research@gmail.com
 location: Jalpaiguri, West Bengal, India
 image: "assets/img/prof_pic.jpg"
-summary: >
-  Aspiring Physicist and Data Scientist specializing in Non-Linear Dynamics, Active Matter, and Machine Learning. 
-  Currently a Visiting Master's Thesis Student at TU Berlin.
+
 
 social_networks:
   - network: LinkedIn
@@ -21,87 +19,115 @@ address:
   region: West Bengal
   countryCode: India
 
-# SKILLS (Top Level for Side Column)
+# --- SKILLS (Must be Top Level) ---
 skills:
-  - name: Languages
-    keywords: "Python, C, C++, Julia, MATLAB, LaTeX"
-  
-  - name: Machine Learning
-    keywords: "TensorFlow, Keras, Scikit-learn, LSTM, PINNs"
+  - name: Programming & HPC
+    keywords: "Python, C, C++, Julia, MATLAB, CUDA, MPI"
 
-  - name: Physics Simulation
-    keywords: "Langevin Dynamics, GPE Solvers, FFT, Monte Carlo"
+  - name: Machine Learning & AI
+    keywords: "TensorFlow, Keras, Scikit-learn, LSTM, SARIMA, Random Forest, PINNs"
 
-  - name: Tools
-    keywords: "Git, Linux, HPC/Cluster Computing, Arduino"
+  - name: Scientific Computing
+    keywords: "Langevin Dynamics, GPE Solvers, FFT, OpenCV, Mathematica"
 
-# SECTIONS (Grouped for the Main Column)
+  - name: Tools & Software
+    keywords: "AutoCAD, Arduino, Git, LaTeX, Linux/Unix"
+
+# --- LANGUAGES (Must be Top Level) ---
+languages:
+  - name: English
+    summary: "Full Professional Proficiency (TOEFL 100)"
+  - name: Bengali
+    summary: "Native"
+  - name: Hindi
+    summary: "Fluent"
+  - name: German
+    summary: "Beginner (A1)"
+
+# --- MAIN SECTIONS ---
 sections:
   Education:
     - institution: IISER Kolkata
       location: Kolkata, India
-      area: Physical Sciences
+      url: https://www.iiserkol.ac.in/
+      area: Major in Physical Sciences, Minor in Computational & Data Science
       studyType: BS-MS Dual Degree
-      start_date: 2021
-      end_date: 2026
-      score: "8.25/10"
-      courses: "Nonlinear Dynamics, Stat Mech, ML, Complex Analysis"
+      start_date: 2021-08-01
+      end_date: 2026-05-01
+      courses: "Nonlinear Dynamics, Statistical Mechanics, Soft Matter Physics, Machine Learning, Complex Analysis"
 
   Experience:
     - company: Technische Universität Berlin
       position: Visiting Master Thesis Student
       location: Berlin, Germany
+      # url: /projects/active-matter (Uncomment and add link if you have one)
       start_date: 2024-08-01
       end_date: 2025-04-30
-      summary: Investigating non-reciprocal interactions in active matter systems.
+      summary: Investigating non-reciprocal interactions in active matter systems under Prof. Holger Stark.
       highlights:
-        - "Discovered novel collective states: cluster crystals and polymer-like chains."
-        - "Developed high-performance C simulations with Python analysis pipelines."
+        - "Discovered novel collective states including cluster crystals, polymer-like chains, and regimes of weak hyperuniformity."
+        - "Developed high-performance Langevin particle simulations in C with a Python data analysis pipeline."
+        - "Analyzed structure factors and correlation functions to provide microscopic insights into self-organizing materials."
 
     - company: Athabasca University
       position: MITACS Globalink Research Fellow
-      location: Edmonton, Canada
+      location: Edmonton, Alberta, Canada
       start_date: 2024-05-01
       end_date: 2024-08-31
-      summary: Hydrological nutrient forecasting under Prof. Junye Wang.
+      summary: Computational research on hydrological nutrient forecasting under Prof. Junye Wang.
       highlights:
-        - "Built SARIMA and LSTM models to forecast nitrogen concentration."
-        - "Benchmarked performance using surrogate environmental data."
+        - "Developed predictive models (SARIMA, Random Forest, LSTM) to forecast nitrogen concentration and algal proliferation."
+        - "Engineered robust features from high-dimensional weather data, handling non-stationarity and measurement uncertainty."
+        - "Benchmarked model performance using rigorous cross-validation techniques."
+
+    - company: IISER Kolkata
+      position: Teaching Assistant (Physics)
+      location: Kolkata, India
+      start_date: 2023-08-01
+      end_date: 2023-12-31
+      summary: TA for Core Undergraduate Physics Course (PH2301) supporting a class of 200 students.
+      highlights:
+        - "Led weekly tutorial sessions on Vector Calculus, Linear Algebra, and Differential Equations."
+        - "Provided one-on-one academic support for complex topics like Cauchy's Theorem and Fourier Analysis."
+        - "Graded assignments and examinations, providing constructive feedback."
 
     - company: Swinburne University of Technology
       position: Research Intern
       location: Remote
       start_date: 2023-05-01
       end_date: 2023-09-30
-      summary: Quantum-classical analogues in Bose-Einstein Condensates.
+      summary: Theoretical project on quantum-classical analogues in Bose-Einstein Condensates (BECs) under Prof. Tapio Simula.
       highlights:
-        - "Modeled 2D BECs using Gross-Pitaevskii equation (GPE) solvers."
-        - "Implemented split-step Fourier methods on HPC clusters."
+        - "Modeled a 2D single-component BEC as a driven system using the Gross-Pitaevskii equation (GPE)."
+        - "Implemented split-step spectral methods (FFT-based) on a High-Performance Computing (HPC) supercluster."
+        - "Conducted systematic parameter sweeps to explore nonlinear dynamics in different physical regimes."
 
-    - company: IISER Kolkata
-      position: Teaching Assistant
+    - company: IISER Kolkata (Non-Linear Dynamics Lab)
+      position: Summer Research Intern
       location: Kolkata, India
-      start_date: 2023-08-01
-      end_date: 2023-12-31
-      summary: TA for Core Undergraduate Physics (PH2301).
+      start_date: 2022-05-01
+      end_date: 2022-07-31
+      summary: Experimental and theoretical investigation of walker-droplet dynamics under Prof. Soumitro Banerjee.
       highlights:
-        - "Led tutorials for 200 students in Vector Calculus and PDEs."
+        - "Engineered an Arduino-controlled experimental setup with custom 3D-printed components."
+        - "Developed an image processing pipeline using OpenCV and Digital Image Correlation (DIC) to quantify droplet flow fields."
+        - "Simulated Lorenz-like models to compare classical soft-impact oscillators with Bohmian quantum dynamics."
 
   Awards:
     - title: MITACS Globalink Research Fellowship
       date: 2024
       awarder: Mitacs Canada
-      summary: Competitive international fellowship (~$10k funding).
+      summary: Competitive international fellowship for research in Canada.
 
-    - title: 2nd Runner Up - DataFest 2023
+    - title: 2nd Runner Up - DataFest@Integration2023
       date: 2023
-      awarder: ISI Kolkata
-      summary: Developed CNNs for whale bioacoustics and KNNs for tiger pugmark classification.
+      awarder: Indian Statistical Institute (ISI), Kolkata
+      summary: National-level ML competition. Secured 3rd place for "Eco-Acoustics & Population Monitoring," developing CNNs for whale bioacoustics.
 
-    - title: Certificate of Appreciation (Leadership)
+    - title: TOEFL iBT Score 100
       date: 2024
-      awarder: IISER Kolkata
-      summary: Orchestrated expeditions and safety protocols as Secretary of the Adventure Club.
+      awarder: ETS
+      summary: Demonstrated C1/Advanced English proficiency.
 
   Publications:
     - title: "Emergent Cluster Crystals in Active Matter Driven by Non-Reciprocal Orientational Interactions"

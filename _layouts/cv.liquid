@@ -3,9 +3,16 @@ layout: default
 ---
 
 <style>
+  /* 1. UNLOCK THE WIDTH (But keep it readable) */
+  /* This overrides the theme's default narrow column just for this page */
+  .post, .container, .content {
+    max-width: 100% !important;
+  }
+  
+  /* 2. CV CONTAINER CONFIG */
   :root {
-    --cv-accent: #0056b3; /* Academic Blue */
-    --cv-text: #333;
+    --cv-accent: #0056b3;
+    --cv-text: #222;
     --cv-muted: #666;
     --cv-bg: #f8f9fa;
     --cv-border: #eaeaea;
@@ -14,10 +21,13 @@ layout: default
   .cv-web-container {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: var(--cv-text);
-    margin-top: 2rem;
+    /* THE GOLDILOCKS WIDTH: Not too narrow, not too wide */
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 2rem 20px;
   }
 
-  /* --- HEADER SECTION --- */
+  /* --- HEADER --- */
   .cv-web-header {
     margin-bottom: 3rem;
     border-bottom: 1px solid var(--cv-border);
@@ -25,32 +35,37 @@ layout: default
   }
   
   .cv-web-name {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 800;
     color: #111;
-    letter-spacing: -0.5px;
+    letter-spacing: -1px;
     margin-bottom: 0.5rem;
   }
 
   .cv-web-label {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--cv-muted);
     font-weight: 500;
     margin-bottom: 1.5rem;
   }
 
+  /* Buttons */
+  .cv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
   .cv-social-btn {
     display: inline-flex;
     align-items: center;
-    padding: 8px 16px;
+    padding: 8px 18px;
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     color: #555;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-right: 10px;
-    margin-bottom: 10px;
     transition: all 0.2s ease;
     text-decoration: none !important;
   }
@@ -62,61 +77,60 @@ layout: default
     transform: translateY(-2px);
   }
 
-  .cv-social-btn i { margin-right: 8px; }
-
   /* --- GRID LAYOUT --- */
   .cv-web-grid {
     display: grid;
-    grid-template-columns: 280px 1fr; /* Fixed Sidebar, Flexible Main */
-    gap: 4rem;
+    /* Sidebar fixed at 260px, Content takes the rest */
+    grid-template-columns: 260px 1fr; 
+    gap: 5rem; 
   }
 
   @media (max-width: 900px) {
-    .cv-web-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .cv-web-grid { grid-template-columns: 1fr; gap: 3rem; }
   }
 
-  /* --- SIDEBAR (Skills, Education) --- */
+  /* --- SIDEBAR STYLING --- */
   .cv-sidebar-section { margin-bottom: 3rem; }
   
   .cv-sidebar-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-weight: 700;
+    font-weight: 800;
     color: #999;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem;
     border-bottom: 2px solid #eee;
     padding-bottom: 5px;
-    display: inline-block;
+    display: block;
   }
 
-  /* Education Item */
   .cv-edu-item { margin-bottom: 1.5rem; }
-  .cv-edu-school { font-weight: 700; font-size: 1rem; color: #222; }
-  .cv-edu-degree { font-size: 0.95rem; color: #555; }
-  .cv-edu-date { font-size: 0.85rem; color: #888; margin-top: 2px; }
+  .cv-edu-school { font-weight: 700; font-size: 1rem; color: #111; }
+  .cv-edu-degree { font-size: 0.95rem; color: #555; line-height: 1.4; margin-top: 2px; }
+  .cv-edu-date { font-size: 0.85rem; color: #888; margin-top: 4px; }
 
   /* Skills Pills */
   .cv-skill-group { margin-bottom: 1.5rem; }
-  .cv-skill-label { font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 5px; }
+  .cv-skill-label { font-weight: 700; font-size: 0.95rem; display: block; margin-bottom: 6px; color: #333; }
   .cv-skill-tag {
     display: inline-block;
     background: #f1f5f9;
     color: #334155;
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
     font-weight: 500;
-    margin-right: 4px;
+    margin-right: 5px;
     margin-bottom: 6px;
+    border: 1px solid #e2e8f0;
   }
 
-  /* --- MAIN CONTENT (Experience) --- */
+  /* --- MAIN CONTENT STYLING --- */
   .cv-main-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: #111;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     display: flex;
     align-items: center;
   }
@@ -126,14 +140,14 @@ layout: default
     flex: 1;
     height: 1px;
     background: #eaeaea;
-    margin-left: 20px;
+    margin-left: 30px;
   }
 
-  /* Timeline Item */
+  /* Timeline */
   .cv-timeline-item {
     position: relative;
-    padding-left: 30px;
-    margin-bottom: 3rem;
+    padding-left: 35px;
+    margin-bottom: 3.5rem;
     border-left: 2px solid #f0f0f0;
   }
 
@@ -141,54 +155,96 @@ layout: default
     content: "";
     position: absolute;
     left: -7px;
-    top: 6px;
+    top: 8px;
     width: 12px;
     height: 12px;
     background: #fff;
     border: 3px solid var(--cv-accent);
     border-radius: 50%;
+    transition: background 0.3s;
   }
 
+  .cv-timeline-item:hover::before {
+    background: var(--cv-accent);
+  }
+
+  /* Job Headers */
   .cv-job-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
+    margin-bottom: 12px;
   }
 
-  .cv-job-role { font-size: 1.2rem; font-weight: 700; color: #111; }
-  .cv-job-company { font-size: 1rem; color: var(--cv-accent); font-weight: 500; margin-bottom: 5px; }
+  /* Clickable Link Styles */
+  .cv-job-role { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    color: #111; 
+    line-height: 1.2;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  a.cv-job-role:hover {
+    color: var(--cv-accent);
+    text-decoration: none;
+  }
+
+  .project-arrow {
+    font-size: 0.9rem;
+    margin-left: 8px;
+    opacity: 0.4;
+    transition: all 0.2s;
+  }
+
+  a.cv-job-role:hover .project-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+    color: var(--cv-accent);
+  }
+
+  .cv-job-company { font-size: 1.05rem; color: var(--cv-accent); font-weight: 500; margin-top: 4px; }
   
   .cv-job-date {
     background: #fff;
     border: 1px solid #ddd;
-    padding: 2px 10px;
-    border-radius: 4px;
-    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: 600;
     color: #555;
+    white-space: nowrap;
+    margin-left: 15px;
   }
 
-  .cv-job-summary { font-size: 1rem; color: #444; line-height: 1.6; margin-bottom: 10px; }
+  /* Body Text */
+  .cv-job-summary { 
+    font-size: 1.05rem; 
+    color: #444; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+    max-width: 95%; /* Prevents text from stretching too wide to read */
+  }
   
   .cv-job-bullets li {
-    font-size: 0.95rem;
-    color: #555;
-    margin-bottom: 6px;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 8px;
+    line-height: 1.6;
   }
 
   /* Awards */
   .cv-award-item {
     display: flex;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
     align-items: baseline;
   }
   .cv-award-year {
     font-weight: 700;
     color: var(--cv-accent);
-    width: 50px;
+    width: 65px;
+    font-size: 1.1rem;
     flex-shrink: 0;
   }
 </style>
@@ -203,9 +259,8 @@ layout: default
       
       <div class="cv-actions">
         <a href="{{ 'assets/pdf/cv.pdf' | relative_url }}" target="_blank" class="cv-social-btn" style="background: #111; color: #fff; border-color: #111;">
-          <i class="fas fa-file-download"></i> Download CV
+          <i class="fas fa-file-download"></i> Download PDF
         </a>
-        
         <a href="mailto:{{ site.data.cv.email }}" class="cv-social-btn">
           <i class="fas fa-envelope"></i> Email
         </a>
@@ -229,7 +284,7 @@ layout: default
             <div class="cv-edu-degree">{{ entry.studyType }} in {{ entry.area }}</div>
             <div class="cv-edu-date">{{ entry.start_date }} – {{ entry.end_date }}</div>
             {% if entry.score %}
-            <div style="font-size: 0.85rem; color: var(--cv-accent); font-weight: 600; margin-top: 2px;">
+            <div style="font-size: 0.85rem; color: var(--cv-accent); font-weight: 600; margin-top: 4px;">
               GPA: {{ entry.score }}
             </div>
             {% endif %}
@@ -255,7 +310,7 @@ layout: default
         <div class="cv-sidebar-section">
           <div class="cv-sidebar-title">Languages</div>
           {% for lang in site.data.cv.languages %}
-          <div style="font-size: 0.9rem; margin-bottom: 5px;">
+          <div style="font-size: 0.95rem; margin-bottom: 6px;">
             <span style="font-weight: 600;">{{ lang.name }}</span> <span style="color:#888;">- {{ lang.summary }}</span>
           </div>
           {% endfor %}
@@ -272,7 +327,14 @@ layout: default
           <div class="cv-timeline-item">
             <div class="cv-job-header">
               <div>
-                <div class="cv-job-role">{{ entry.position }}</div>
+                {% if entry.url %}
+                  <a href="{{ entry.url | relative_url }}" class="cv-job-role">
+                    {{ entry.position }} <i class="fas fa-arrow-right project-arrow"></i>
+                  </a>
+                {% else %}
+                  <div class="cv-job-role">{{ entry.position }}</div>
+                {% endif %}
+                
                 <div class="cv-job-company">{{ entry.company }} • {{ entry.location }}</div>
               </div>
               <div class="cv-job-date">
@@ -302,22 +364,22 @@ layout: default
           <div class="cv-award-item">
             <div class="cv-award-year">{{ entry.date }}</div>
             <div>
-              <div style="font-weight: 700; color: #222;">{{ entry.title }}</div>
-              <div style="font-size: 0.9rem; font-style: italic; color: #555;">{{ entry.awarder }}</div>
-              <div style="font-size: 0.9rem; color: #666; margin-top: 2px;">{{ entry.summary }}</div>
+              <div style="font-weight: 700; color: #111; font-size: 1.15rem;">{{ entry.title }}</div>
+              <div style="font-size: 1rem; font-style: italic; color: #555;">{{ entry.awarder }}</div>
+              <div style="font-size: 1rem; color: #666; margin-top: 4px;">{{ entry.summary }}</div>
             </div>
           </div>
           {% endfor %}
         </section>
 
         {% if site.data.cv.sections.Publications %}
-        <section style="margin-top: 3rem;">
+        <section style="margin-top: 5rem;">
           <h2 class="cv-main-title">Key Publications</h2>
           {% for entry in site.data.cv.sections.Publications %}
-          <div style="margin-bottom: 1.5rem;">
-            <div style="font-weight: 700; font-size: 1.05rem;">{{ entry.title }}</div>
-            <div style="color: #666; font-size: 0.95rem;">{{ entry.authors | join: ", " }}</div>
-            <div style="color: var(--cv-accent); font-size: 0.9rem; font-style: italic;">
+          <div style="margin-bottom: 2.5rem;">
+            <div style="font-weight: 700; font-size: 1.2rem;">{{ entry.title }}</div>
+            <div style="color: #666; font-size: 1.05rem; margin-top: 4px;">{{ entry.authors | join: ", " }}</div>
+            <div style="color: var(--cv-accent); font-size: 1rem; font-style: italic; margin-top: 4px;">
               {{ entry.publisher }} ({{ entry.releaseDate }})
             </div>
           </div>
