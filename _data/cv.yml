@@ -3,164 +3,141 @@ cv:
   label: Physicist & Researcher
   email: somnath.roy.research@gmail.com
   location: Jalpaiguri, West Bengal, India
-  image: "assets/img/prof_pic.jpg" # Make sure your photo is here
-  summary: >
-    Incoming PhD applicant specializing in Theoretical Biophysics, Active Matter, and Physics-Informed Neural Networks (PINNs). 
-    Currently completing a Master's Thesis on non-reciprocal interactions in active matter.
-
-  social_networks:
-    - network: LinkedIn
-      username: somnath-roy-596136233
-    - network: GitHub
-      username: SomnathRoy123
-
-  address:
-    street: Jalpaiguri Road
-    city: Jalpaiguri
-    region: West Bengal
-    countryCode: IN
+  image: "assets/img/prof_pic.jpg"
+  
+  
 
   sections:
     Education:
       - institution: IISER Kolkata
         location: Kolkata, India
         url: https://www.iiserkol.ac.in/
-        area: Physical Sciences
+        area: Major in Physical Sciences and Minor in Computational and Data Science
         studyType: BS-MS Dual Degree
-        start_date: 2021
-        end_date: 2026
-        score: "8.25/10"
-        courses: "Nonlinear Dynamics, Statistical Mechanics, Soft Matter Physics, Machine Learning"
-        highlights:
-          - "Minor in Computational and Data Science"
-          - "Master's Thesis Supervisor: Prof. Holger Stark (TU Berlin)"
+        start_date: 2021-08-01
+        end_date: 2026-05-01
+        
+        courses: "Nonlinear Dynamics, Statistical Mechanics, Soft Matter Physics, Machine Learning, Complex Analysis"
+        
 
     Experience:
-      - company: Technical University Berlin & IISER Kolkata
-        position: Master's Thesis Student
-        location: Berlin, Germany 
+      - company: Technische Universität Berlin
+        position: Visiting Master Thesis Student
+        location: Berlin, Germany
         start_date: 2024-08-01
-        end_date: 2025-06-30
-        summary: Investigating emergent dynamic phases and clustering in active matter governed by non-reciprocal orientational interactions.
+        end_date: 2025-04-30
+        summary: Investigating non-reciprocal interactions in active matter systems under Prof. Holger Stark.
         highlights:
-          - "Developed high-performance Langevin particle simulations in C."
-          - "Built data analysis pipelines in Python to quantify collective states."
-          - "Discovered novel collective states like cluster crystals and polymer-like chains."
+          - "Discovered novel collective states including cluster crystals, polymer-like chains, and regimes of weak hyperuniformity."
+          - "Developed high-performance Langevin particle simulations in C with a Python data analysis pipeline."
+          - "Analyzed structure factors and correlation functions to provide microscopic insights into self-organizing materials."
 
       - company: Athabasca University
         position: MITACS Globalink Research Fellow
-        location: Alberta, Canada
-        start_date: 2024-04-01
+        location: Edmonton, Alberta, Canada
+        start_date: 2024-05-01
         end_date: 2024-08-31
-        summary: Hydrological time-series forecasting under Prof. Junye Wang.
+        summary: Computational research on hydrological nutrient forecasting under Prof. Junye Wang.
         highlights:
-          - "Developed predictive models (SARIMA, Random Forest, LSTM) for nitrogen concentration."
-          - "Benchmarked models using surrogate environmental data."
+          - "Developed predictive models (SARIMA, Random Forest, LSTM) to forecast nitrogen concentration and algal proliferation."
+          - "Engineered robust features from high-dimensional weather data, handling non-stationarity and measurement uncertainty."
+          - "Benchmarked model performance using rigorous cross-validation techniques."
+
+      - company: IISER Kolkata
+        position: Teaching Assistant (Physics)
+        location: Kolkata, India
+        start_date: 2023-08-01
+        end_date: 2023-12-31
+        summary: TA for Core Undergraduate Physics Course (PH2301) supporting a class of 200 students.
+        highlights:
+          - "Led weekly tutorial sessions on Vector Calculus, Linear Algebra, and Differential Equations."
+          - "Provided one-on-one academic support for complex topics like Cauchy's Theorem and Fourier Analysis."
+          - "Graded assignments and examinations, providing constructive feedback."
 
       - company: Swinburne University of Technology
         position: Research Intern
-        location: Melbourne, Australia
+        location: Melbourne, Australia (Remote)
         start_date: 2023-05-01
-        end_date: 2023-08-31
-        summary: Numerical Simulation of Nonlinear PDEs (Gross-Pitaevskii Equation).
+        end_date: 2023-09-30
+        summary: Theoretical project on quantum-classical analogues in Bose-Einstein Condensates (BECs) under Prof. Tapio Simula.
         highlights:
-          - "Implemented split-step spectral methods (FFT-based) to solve nonlinear PDEs."
-          - "Modeled hydrodynamic analogs of walker droplets."
+          - "Modeled a 2D single-component BEC as a driven system using the Gross-Pitaevskii equation (GPE)."
+          - "Implemented split-step spectral methods (FFT-based) on a High-Performance Computing (HPC) supercluster."
+          - "Conducted systematic parameter sweeps to explore nonlinear dynamics in different physical regimes."
+
+      - company: IISER Kolkata (Non-Linear Dynamics Lab)
+        position: Summer Research Intern
+        location: Kolkata, India
+        start_date: 2022-05-01
+        end_date: 2022-07-31
+        summary: Experimental and theoretical investigation of walker-droplet dynamics under Prof. Soumitro Banerjee.
+        highlights:
+          - "Engineered an Arduino-controlled experimental setup with custom 3D-printed components."
+          - "Developed an image processing pipeline using OpenCV and Digital Image Correlation (DIC) to quantify droplet flow fields."
+          - "Simulated Lorenz-like models to compare classical soft-impact oscillators with Bohmian quantum dynamics."
 
     Volunteer:
+      - company: Inquivesta (Science Festival)
+        position: Event Organizer
+        location: Kolkata, India
+        start_date: 2022-07-01
+        end_date: 2022-12-31
+        summary: Managed logistics and planning for one of India's largest student-run science festivals.
+        highlights:
+          - "Coordinated with vendors and suppliers for seamless event execution."
+          - "Managed event budgets and implemented marketing strategies to increase footfall."
+
       - company: Trekking and Adventure Club, IISER Kolkata
         position: Secretary
         location: Kolkata, India
         start_date: 2023-01-01
         end_date: 2026-05-01
         summary: Leading outdoor activities and managing club logistics.
-      
-      - company: INQUIVESTA (Science Fest)
-        position: Organizer
-        location: Kolkata, India
-        start_date: 2022-01-01
-        summary: Organizing one of India's largest college science festivals.
-
-      - company: Ek Pahel (NGO)
-        position: Volunteer
-        location: India
-        start_date: 2021-01-01
-        summary: Social work and community outreach.
 
     Awards:
-      - title: MITACS Globalink Research Fellowship
-        date: 2024
-        awarder: Mitacs Canada
-        summary: Competitive fellowship for international research in Canada.
+        - title: MITACS Globalink Research Fellowship
+          date: 2024
+          awarder: Mitacs Canada
+          summary: Competitive international fellowship for research in Canada.
 
-      - title: TOEFL iBT Score 100
-        date: 2024
-        awarder: ETS
-        summary: Equivalent to C1/Advanced English proficiency.
+        - title: 2nd Runner Up - DataFest@Integration2023
+          date: 2023
+          awarder: Indian Statistical Institute (ISI), Kolkata
+          summary: National-level ML competition. Secured 3rd place for "Eco-Acoustics & Population Monitoring," developing CNNs for whale bioacoustics and KNNs for tiger pugmark classification.
 
-      - title: Runners-up (ISI Integration Data Fest)
-        date: 2023
-        awarder: Indian Statistical Institute
-
-    Publications:
-      - title: "Emergent Cluster Crystals in Active Matter Driven by Non-Reciprocal Orientational Interactions"
-        authors:
-          - Somnath Roy
-          - Holger Stark
-        publisher: Manuscript in Preparation
-        releaseDate: 2025
-        summary: Investigating the role of non-reciprocal interactions in active matter systems.
-
+        - title: TOEFL iBT Score 100
+          date: 2024
+          awarder: ETS
+          summary: Demonstrated C1/Advanced English proficiency.
+    
     Skills:
-      - name: Programming
+      - name: Programming & HPC
         level: Advanced
         icon: fa-solid fa-code
-        keywords: "Python, C, C++, Julia, MATLAB, Fortran"
+        keywords: "Python, C, C++, Julia, MATLAB, CUDA, MPI"
 
-      - name: Machine Learning
+      - name: Machine Learning & AI
         level: Intermediate
         icon: fa-solid fa-brain
-        keywords: "PINNs, LSTMs, CNNs, Random Forest, TensorFlow, PyTorch"
+        keywords: "TensorFlow, Keras, Scikit-learn, LSTM, SARIMA, Random Forest, PINNs"
 
-      - name: Simulation Tools
+      - name: Scientific Computing
         level: Advanced
-        icon: fa-solid fa-laptop-code
-        keywords: "Langevin Dynamics, Molecular Dynamics, FFT, LAMMPS"
+        icon: fa-solid fa-calculator
+        keywords: "Langevin Dynamics, GPE Solvers, FFT, OpenCV, Mathematica"
+
+      - name: Tools & Software
+        level: Intermediate
+        icon: fa-solid fa-tools
+        keywords: "AutoCAD, Arduino, Git, LaTeX, Linux/Unix"
 
     Languages:
       - name: English
-        summary: "Full Professional Proficiency (TOEFL 100)"
+        summary: "Full Professional Proficiency"
       - name: Bengali
         summary: "Native"
       - name: Hindi
         summary: "Fluent"
+      - name: German
+        summary: "Beginner (A1)"
 
-    Certificates:
-      - name: Generative AI (Gen AI) Live Project
-        date: 2025
-        issuer: Finlatics
-        icon: fa-solid fa-robot
-
-      - name: Machine Learning & Data Analytics Training
-        date: 2023
-        issuer: Teachnook & IIT Bhubaneswar
-        icon: fa-solid fa-chart-line
-
-      - name: Summer School on Nonlinear Physics
-        date: 2023-07-01
-        issuer: IIT Kharagpur
-        icon: fa-solid fa-graduation-cap
-
-      - name: Introduction to Soft Matter
-        date: 2022-08-01
-        issuer: NPTEL (IISc Bangalore)
-        icon: fa-solid fa-atom
-
-    Projects:
-      - name: Active Matter Simulations
-        summary: GitHub repository for Langevin dynamics simulations of active particles.
-        highlights:
-          - "C-based simulation engine"
-          - "Python analysis tools"
-        start_date: 2024-01-01
-        url: https://github.com/SomnathRoy123

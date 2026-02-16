@@ -2,7 +2,7 @@
 layout: page
 title: Bio-Acoustic Event Detection in Stochastic Noise Fields
 description: A study on identifying transient Blue Whale A-Calls using Dual-Domain Spectral Subtraction and Convolutional Neural Networks.
-img: assets/img/spectrogram_thumb.jpg
+# img: assets/img/spectrogram_thumb.jpg
 importance: 1
 category: Machine Learning
 related_publications: false
