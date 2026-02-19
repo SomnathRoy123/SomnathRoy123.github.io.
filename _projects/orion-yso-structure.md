@@ -3,7 +3,7 @@ layout: page
 title: Structural Analysis of Young Stellar Objects in Orion
 description: Data-driven astrophysical analysis pipeline for characterizing spatial and morphological structure of Young Stellar Objects (YSOs) in the Orion region.
 importance: 3
-category: Astrophysics & Data Analysis
+category: Computational Data Science
 related_publications: false
 repository: https://github.com/SomnathRoy123/Orion-YSO-Structure
 date: 2024-12-01

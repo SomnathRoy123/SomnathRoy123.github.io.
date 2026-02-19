@@ -3,7 +3,7 @@ layout: page
 title: WKB Quantization of the Lennard-Jones Potential
 description: Semi-classical computation of bound-state spectra in the Lennard-Jones potential using WKB methods, turning molecular interaction physics into a reproducible numerical workflow.
 importance: 2
-category: Theoretical & Computational Physics
+category: Computational Data Science
 related_publications: false
 repository: https://github.com/SomnathRoy123/WKB-LennardJones-Quantization
 date: 2024-09-10

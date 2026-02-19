@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of research and computational projects.
 nav: true
 nav_order: 3
-display_categories: [Biophysics, Machine Learning, Statistical Physics, Open Source]
+display_categories: [Biophysics, Machine Learning, Computational Data Science, Open Source]
 horizontal: false
 masonry: false
 ---
