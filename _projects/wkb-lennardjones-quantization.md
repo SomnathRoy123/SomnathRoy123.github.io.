@@ -29,8 +29,6 @@ The code is structured into a functional pipeline designed for numerical stabili
 * **Anharmonic Spectrum:** Successfully mapped the energy levels, showing how the "ladder" gets closer together as the energy approaches the dissociation limit—a hallmark of real molecular bonds.
 * **Validation:** Generated publication-ready plots using `Matplotlib` that overlay the energy levels on the potential well, confirming the physical consistency of the results.
 
-## 4. Conclusion: Research Impact
-This project demonstrates my ability to take a high-level physics theory and implement a **production-ready numerical solution**. By solving the challenges of singularity-handling and non-linear root finding, I have built a toolkit directly applicable to my PhD goals in **Biophysics**, specifically for modeling **nuclear dynamics** and **protein-ligand interaction potentials** under mechanical stress.
 
 <div class="mt-4">
     <a href="https://github.com/SomnathRoy123/WKB-LennardJones-Quantization" class="btn btn-outline-dark btn-sm" role="button">

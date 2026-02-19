@@ -30,8 +30,6 @@ Instead of relying on basic distance thresholds, this repository implements adva
 * **Automated Sub-structure Detection:** Successfully segregated the Orion complex into distinct morphological sub-regions, validating the pipeline's ability to detect varying density gradients.
 * **Scalable Framework:** The analysis code is modularized so that updated catalog parameters or entirely new target fields can be processed through the same clustering logic with minimal manual intervention.
 
-## 4. Conclusion: Value for Interdisciplinary Research
-This project demonstrates my proficiency in **handling large, messy datasets** and extracting physical meaning using **modern machine learning tools**. The ability to construct graph-based models (MST) and density-based clusters (DBSCAN) is highly transferable. Whether the data points represent stars in a nebula or the spatial coordinates of **cell nuclei under mechanical stimuli**, the statistical principles of pattern recognition remain the same—making this toolkit directly applicable to my future PhD research in biophysics.
 
 <div class="mt-4">
     <a href="https://github.com/SomnathRoy123/Orion-YSO-Structure" class="btn btn-outline-dark btn-sm" role="button">
