@@ -1,51 +1,39 @@
 ---
 layout: page
-title: WKB Quantization of the Lennard-Jones Potential
-description: Semi-classical computation of bound-state spectra in the Lennard-Jones potential using WKB methods, turning molecular interaction physics into a reproducible numerical workflow.
-importance: 2
+title: Numerical WKB Quantization of Lennard-Jones Systems
+description: A computational framework for solving the Bohr-Sommerfeld quantization condition to predict the energy spectra of molecular van der Waals interactions.
+importance: 1
 category: Computational Data Science
 related_publications: false
 repository: https://github.com/SomnathRoy123/WKB-LennardJones-Quantization
 date: 2024-09-10
 ---
 
-**Role:** Theoretical Modeling & Numerical Implementation  
-**Stack:** `Python` `NumPy` `SciPy` `Matplotlib` `WKB Approximation`
+**Role:** Theoretical Modeling & Lead Developer  
+**Stack:** `Python` `NumPy` `SciPy (Optimize & Integrate)` `Matplotlib`
 
-## 1. Introduction: Why Semi-Classical Quantization Matters
+## 1. Project Objective: Bridging Analytical Theory & Simulation
+The primary goal was to develop an automated pipeline to calculate the **discrete energy levels ($E_n$)** of a particle trapped in a Lennard-Jones (12-6) potential. This problem lacks a closed-form analytical solution, making it a perfect candidate for demonstrating how **semi-classical (WKB) physics** can be turned into a reproducible numerical workflow.
 
-The Lennard-Jones potential is a foundational model in atomic and molecular physics, capturing the competition between short-range repulsion and long-range attraction. This project studies how far one can push a **semi-classical (WKB)** treatment to recover the structure of bound states for such a nontrivial potential landscape.
+## 2. Coding Logic & Numerical Architecture
+The code is structured into a functional pipeline designed for numerical stability and precision:
 
-Instead of treating quantization as a symbolic-only exercise, the repository frames it as a computational pipeline: define turning points, evaluate the action integral, impose quantization, and compute the energy spectrum with controlled numerical precision.
+* **The Potential Engine:** Implemented the Lennard-Jones potential $V(r)$ using vectorized `NumPy` operations to allow for efficient energy-surface mapping.
+* **Turning-Point Algorithm:** Used `scipy.optimize.brentq` to solve for $r_1$ and $r_2$. I handled the **steep repulsive wall** at small $r$ by constraining the search interval, preventing the root-finder from diverging into the $r \to 0$ singularity.
+* **The Action Integral:** Built a robust integration loop to evaluate:
+    $$\int_{r_1}^{r_2} \sqrt{2\mu(E - V(r))}\,dr = (n + \frac{1}{2})\pi\hbar$$
+    I utilized `scipy.integrate.quad` with an increased number of sub-intervals (`limit=100`) to manage the **inverse-square root singularity** that occurs at the turning points.
+* **Energy Level Iteration:** Developed a "Spectral Search" loop that iterates through quantum numbers $n$, finding the specific energy $E$ for each $n$ that satisfies the quantization condition.
 
-## 2. Methodology: From Potential Landscape to Energy Levels
+## 3. Results & Scientific Value
+* **Anharmonic Spectrum:** Successfully mapped the energy levels, showing how the "ladder" gets closer together as the energy approaches the dissociation limit—a hallmark of real molecular bonds.
+* **Validation:** Generated publication-ready plots using `Matplotlib` that overlay the energy levels on the potential well, confirming the physical consistency of the results.
 
-For a trial energy $E$, the classical turning points $r_1, r_2$ are obtained from $V(r)=E$. The WKB quantization condition is then enforced:
-
-$$
-\int_{r_1}^{r_2} \sqrt{2\mu\,(E - V(r))}\,dr = \left(n+\frac{1}{2}\right)\pi\hbar
-$$
-
-The code numerically solves this condition across quantum numbers to estimate the bound-state ladder and inspect spacing trends.
-
-### Key computational components
-
-- Robust turning-point detection for each admissible $E$.
-- Stable quadrature of the action integral near endpoint singular behavior.
-- Root-finding loop that maps each quantum index to a unique energy level.
-
-## 3. Outcomes and Scientific Value
-
-- Constructed a reproducible framework to estimate bound-state energies in a physically relevant interaction potential.
-- Demonstrated how semi-classical methods can bridge analytical physics intuition with practical numerical computation.
-- Produced publication-ready diagnostics showing quantization consistency and spectral structure.
-
-## 4. Why this strengthens a PhD profile
-
-This project highlights the ability to combine **advanced analytical physics concepts** with **careful numerical implementation**, which is essential in graduate research spanning quantum systems, statistical mechanics, and computational modeling.
+## 4. Conclusion: Research Impact
+This project demonstrates my ability to take a high-level physics theory and implement a **production-ready numerical solution**. By solving the challenges of singularity-handling and non-linear root finding, I have built a toolkit directly applicable to my PhD goals in **Biophysics**, specifically for modeling **nuclear dynamics** and **protein-ligand interaction potentials** under mechanical stress.
 
 <div class="mt-4">
     <a href="https://github.com/SomnathRoy123/WKB-LennardJones-Quantization" class="btn btn-outline-dark btn-sm" role="button">
-        <i class="fab fa-github"></i> View Full Repository
+        <i class="fab fa-github"></i> Explore the Code
     </a>
 </div>
