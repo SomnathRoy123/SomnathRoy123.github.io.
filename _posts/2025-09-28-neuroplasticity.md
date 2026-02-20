@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Living Ecosystem of the Mind: Why Your Brain is a Biological Garden, Not a Hard Drive"
-date: 2026-02-20 08:00:00
+date: 2025-09-28 08:00:00
 description: "Exploring the biology of neuroplasticity and how our brains continuously adapt at the cellular level."
 tags: neuroscience biology mechanobiology research
 categories: research
